@@ -1,0 +1,43 @@
+{
+  "name": "bison-h5",
+  "version": "1.0.0",
+  "description": "Nuxt.js project",
+  "author": "AdamChen",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "build-test": "NODE_ENV=test npm run build",
+    "start-test": "NODE_ENV=test npm run start",
+    "build-master": "NODE_ENV=master npm run build",
+    "start-master": "NODE_ENV=master npm run start",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "precommit": "npm run lint",
+    "mock": "cd mock && nodemon index.js"
+  },
+  "config": {
+    "nuxt": {
+      "host": "0.0.0.0",
+      "port": "8080"
+    }
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "nuxt": "^1.0.0",
+    "vant": "^0.12.12"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.1",
+    "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
+    "eslint": "^4.15.0",
+    "eslint-friendly-formatter": "^3.0.0",
+    "eslint-loader": "^1.7.1",
+    "eslint-plugin-vue": "^4.0.0",
+    "express": "^4.16.2",
+    "less": "^3.0.1",
+    "less-loader": "^4.0.6"
+  }
+}
