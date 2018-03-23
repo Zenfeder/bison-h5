@@ -4,11 +4,6 @@
       <p>{{message}}</p>
       <!-- <van-button type="primary">主要按钮</van-button> -->
       <i class="icon iconfont icon-camera"></i>
-      <i class="icon iconfont icon-like"></i>
-      <i class="icon iconfont icon-praise"></i>
-      <i class="icon iconfont icon-message"></i>
-      <i class="icon iconfont icon-interactive"></i>
-      <i class="icon iconfont icon-label"></i>
     </div>
   </section>
 </template>
@@ -91,7 +86,7 @@ export default {
       let b = await this.testPromiseB()
       console.log(b)
 
-      return { message: 'finished' }
+      return { message: 'Finished!' }
     }
   },
 }
