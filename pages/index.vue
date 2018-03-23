@@ -81,7 +81,7 @@ export default {
       let apiUser = await http({
         api: 'apiUser',
         params: {
-          userId: '123xxx321'
+          userId: '123321'
         }
       }).then(res => {
         // alert(res.data.data)
