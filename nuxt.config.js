@@ -15,7 +15,7 @@ module.exports = {
   css: ['~assets/style/main.less'],
   loading: { color: '#3B8070' },
   build: {
-    publicPath: _config.assetPublicPath,
+    // publicPath: _config.assetPublicPath,
     loaders: [{
       test: /\.less$/,
       use: [{
