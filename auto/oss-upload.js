@@ -13,13 +13,13 @@ const client = new OSS({
   bucket: config.oss.bucket
 })
 
-const rootDir = "./dist"
+const rootDir = "./.nuxt/dist"
 
 const buildType = process.env.ENV_BUILD_TYPE || 'test'
 
 const uploadDirMap = {
-  test: config.oss.bucket + '/test',
-  master: config.oss.bucket + '/master'
+  test: 'bison-h5/test',
+  master: 'bison-h5/master'
 }
 
 const filesQueue = scan({
