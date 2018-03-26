@@ -1,4 +1,4 @@
-FROM node:carbon
+FROM node:9.9.0
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -12,5 +12,6 @@ COPY . .
 EXPOSE 8080
 
 RUN npm install
+RUN npm run build
 
-CMD ["npm", "go"]
+CMD ["npm", "start"]
