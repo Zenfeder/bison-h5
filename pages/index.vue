@@ -34,7 +34,7 @@ export default {
   // },
   data() {
     return {
-      message: 'Hello world'
+      message: 'Hello Bison App'
     }
   },
   created() {
