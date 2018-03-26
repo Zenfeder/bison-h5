@@ -5,7 +5,7 @@ WORKDIR /usr/src/app
 
 COPY package*.json ./
 
-ENV NODE_ENV=test
+# ENV NODE_ENV=test
 
 COPY . .
 
