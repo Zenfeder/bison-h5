@@ -1,7 +1,7 @@
 <template>
   <section class="container">
     <div>
-      <h1>Hello world</h1>
+      <h1>Hello Bison App</h1>
       <p>{{message}}</p>
       <!-- <van-button type="primary">主要按钮</van-button> -->
       <i class="icon iconfont icon-camera"></i>
