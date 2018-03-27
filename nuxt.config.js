@@ -27,6 +27,12 @@ module.exports = {
       }]
     }],
     extend (config, { isDev, isClient }) {
+      for (let key in config.plugins) {
+        if (config.plugins[key].constructor.name === 'UglifyJsPlugin') {
+          config.plugins[key].options.uglifyOptions['mangle'] = { safari10: true }
+        }
+      }
+
       if (isDev && isClient) {
         config.module.rules.push({
           enforce: 'pre',
