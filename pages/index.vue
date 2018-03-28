@@ -33,7 +33,7 @@ export default {
   // },
   data() {
     return {
-      message: 'Hello Bison App'
+      message: 'Hello ha-kafer-h5'
     }
   },
   created() {
