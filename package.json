@@ -1,8 +1,8 @@
 {
-  "name": "bison-h5",
+  "name": "ha-kafer-h5",
   "version": "1.0.0",
-  "description": "Nuxt.js project",
-  "author": "AdamChen",
+  "description": "基于nuxt.js构建的移动端精选段子网站",
+  "author": "陈果",
   "private": true,
   "scripts": {
     "dev": "nuxt",
