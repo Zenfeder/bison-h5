@@ -1,9 +1,8 @@
 <template>
   <section class="container">
     <div>
-      <h1>Hello, ha-kafer-h5</h1>
+      <img src="~/static/logo.png">
       <p>{{message}}</p>
-      <!-- <van-button type="primary">主要按钮</van-button> -->
       <i class="icon iconfont icon-camera"></i>
     </div>
   </section>
