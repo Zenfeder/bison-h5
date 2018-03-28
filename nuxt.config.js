@@ -13,7 +13,7 @@ module.exports = {
       { src: 'https://adam-test.oss-cn-hangzhou.aliyuncs.com/lib/flexible.js' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico?v=2' }
     ]
   },
   css: ['~assets/style/main.less'],
