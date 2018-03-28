@@ -12,3 +12,6 @@ dist
 
 # 本地配置信息
 local
+
+.package-lock.json
+.DS_Store
