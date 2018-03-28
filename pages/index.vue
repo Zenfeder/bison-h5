@@ -11,7 +11,6 @@
 
 <script>
 import AppLogo from '~/components/AppLogo.vue'
-import axios from 'axios'
 import http from '../api/http.js'
 
 export default {
@@ -96,8 +95,6 @@ export default {
 <style lang="less">
 .container {
   box-sizing: border-box;
-  width: 5rem;
-  border-right: 1px solid red;
   min-height: 100vh;
   display: flex;
   justify-content: center;
