@@ -10,14 +10,14 @@ module.exports = {
       { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no' }
     ],
     script: [
-      { src: 'https://adam-test.oss-cn-hangzhou.aliyuncs.com/lib/flexible.js' }
+      { src: 'https://ha-kafer.oss-cn-beijing.aliyuncs.com/lib/flexible.js' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico?v=2' }
     ]
   },
   css: ['~assets/style/main.less'],
-  loading: { color: '#3B8070' },
+  loading: { color: '#F8E71C' },
   build: {
     // publicPath: _config.assetPublicPath,
     loaders: [{
