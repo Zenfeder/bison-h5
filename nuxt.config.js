@@ -60,7 +60,6 @@ module.exports = {
   },
   vendor: ['axios', 'vant'],
   plugins: [
-    { src: '~plugins/quill', ssr: false },
     '~plugins/vant'
   ]
 }
