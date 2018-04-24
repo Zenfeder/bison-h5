@@ -1,7 +1,7 @@
 module.exports = function () {
   return {
     data: `I'am a user api`,
-    msg: '',
+    message: '',
     code: 200
   }
 }

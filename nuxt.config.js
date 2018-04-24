@@ -1,4 +1,5 @@
 const _config = require('./config/index.js')
+const path = require('path')
 
 module.exports = {
   head: {
@@ -16,21 +17,28 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico?v=2' }
     ]
   },
-  css: ['~assets/style/main.less'],
+  css: [
+    '~assets/style/main.less',
+    'quill/dist/quill.snow.css',
+    'quill/dist/quill.bubble.css',
+    'quill/dist/quill.core.css'
+  ],
   loading: { color: '#F8E71C' },
   build: {
     // publicPath: _config.assetPublicPath,
     loaders: [{
       test: /\.less$/,
       use: [{
-        loader: "style-loader" // creates style nodes from JS strings
+        loader: "style-loader"
       }, {
-        loader: "css-loader" // translates CSS into CommonJS
+        loader: "css-loader"
       }, {
-        loader: "less-loader" // compiles Less to CSS
+        loader: "less-loader"
       }]
     }],
     extend (config, { isDev, isClient }) {
+      config.resolve.alias['~api'] = path.join(__dirname, 'api')
+
       for (let key in config.plugins) {
         if (config.plugins[key].constructor.name === 'UglifyJsPlugin') {
           config.plugins[key].options.uglifyOptions['mangle'] = { safari10: true }
@@ -52,7 +60,7 @@ module.exports = {
   },
   vendor: ['axios', 'vant'],
   plugins: [
-    // { src: '~plugins/flexible', ssr: false },
+    { src: '~plugins/quill', ssr: false },
     '~plugins/vant'
   ]
 }
