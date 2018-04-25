@@ -1,0 +1,35 @@
+<template>
+  <div class="loading">
+    <i class="iconfont icon-loading"></i>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'haLoading'
+}
+</script>
+
+<style lang="less">
+@import '~assets/style/variable/color.less';
+
+.loading {
+  display: inline-block;
+  width: 30/37.5rem;
+  height: 30/37.5rem;
+  -webkit-animation: circle 1.8s infinite linear;
+  .icon-loading{
+    font-size: .8rem;
+    color: @yellow;
+  }
+}
+
+@-webkit-keyframes circle{
+  0% { 
+    transform:rotate(0deg); 
+  }
+  100% { 
+    transform:rotate(360deg); 
+  }
+}
+</style>

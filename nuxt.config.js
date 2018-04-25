@@ -35,6 +35,7 @@ module.exports = {
     }],
     extend (config, { isDev, isClient }) {
       config.resolve.alias['~api'] = path.join(__dirname, 'api')
+      config.resolve.alias['~components'] = path.join(__dirname, 'components')
 
       for (let key in config.plugins) {
         if (config.plugins[key].constructor.name === 'UglifyJsPlugin') {
@@ -56,8 +57,8 @@ module.exports = {
     apiBasePath: _config.apiBasePath
   },
   vendor: ['axios', 'vue-toasted'],
-  plugins: [{
-    src: '~plugins/vue-toast.js',
-    ssr: false
-  }]
+  plugins: [
+    { src: '~plugins/vue-toast.js', ssr: false },
+    { src: '~plugins/components.js', ssr: true },
+  ]
 }
