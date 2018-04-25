@@ -22,8 +22,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "nuxt": "^1.0.0",
-    "vant": "^0.12.12",
-    "vue-quill-editor": "^3.0.6"
+    "vue-toasted": "^1.1.24"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",

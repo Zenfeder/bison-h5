@@ -3,7 +3,7 @@ const path = require('path')
 
 module.exports = {
   head: {
-    title: 'HA - 子不笑，吾之锅',
+    title: 'HA - 子不笑，我的锅',
     meta: [
       { charset: 'utf-8' },
       { hid: 'description', name: 'description', content: '一个刷多了能让自己变乐观和能让女朋友开心的神奇网站' },
@@ -18,10 +18,7 @@ module.exports = {
     ]
   },
   css: [
-    '~assets/style/main.less',
-    'quill/dist/quill.snow.css',
-    'quill/dist/quill.bubble.css',
-    'quill/dist/quill.core.css'
+    '~assets/style/main.less'
   ],
   loading: { color: '#F8E71C' },
   build: {
@@ -58,8 +55,9 @@ module.exports = {
   env: {
     apiBasePath: _config.apiBasePath
   },
-  vendor: ['axios', 'vant'],
-  plugins: [
-    '~plugins/vant'
-  ]
+  vendor: ['axios', 'vue-toasted'],
+  plugins: [{
+    src: '~plugins/vue-toast.js',
+    ssr: false
+  }]
 }
