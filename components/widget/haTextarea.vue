@@ -1,10 +1,10 @@
 <template>
-  <div>input组件</div>
+  <div>textarea组件</div>
 </template>
 
 <script>
 export default {
-  name: 'haInput'
+  name: 'haTextarea'
 }
 </script>
 

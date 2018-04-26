@@ -1,14 +1,14 @@
 <template>
-  <div>input组件</div>
+  <div>header组件</div>
 </template>
 
 <script>
 export default {
-  name: 'haInput'
+  name: 'haHeader'
 }
 </script>
 
 <style lang="less" scoped>
-
+  
 </style>
 

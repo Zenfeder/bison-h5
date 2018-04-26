@@ -1,10 +1,17 @@
 <template>
-  <div>按钮组件</div>
+  <button @click="handleClick">
+    <slot/>
+  </button>
 </template>
 
 <script>
 export default {
-  name: 'haButton'
+  name: 'haButton',
+  methods: {
+    handleClick () {
+      this.$emit('click')
+    }
+  }
 }
 </script>
 
