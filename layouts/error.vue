@@ -2,7 +2,7 @@
   <section class="layout-error">
     <div>
       <i class="icon iconfont icon-rocket"></i>
-      <p>404 页面跑路了</p>
+      <p>页面跑路了</p>
     </div>
   </section>
 </template>
