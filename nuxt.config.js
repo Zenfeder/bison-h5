@@ -53,6 +53,9 @@ module.exports = {
       }
     }
   },
+  router: {
+    middleware: 'check-auth'
+  },
   env: {
     apiBasePath: _config.apiBasePath
   },
