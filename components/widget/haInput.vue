@@ -1,5 +1,5 @@
 <template>
-  <div class="ha-input_box" :class="{ 'low': low }">
+  <div class="ha-input_box" :class="size">
     <label v-if="validateIcon">
       <i class="iconfont" :class="'icon-' + icon"></i>
     </label>
@@ -15,9 +15,9 @@ export default {
       type: String,
       default: 'text'
     },
-    low: {
-      type: Boolean,
-      default: false
+    size: {
+      type: String,
+      default: 'md'
     },
     placeholder: {
       type: String,
@@ -49,7 +49,7 @@ export default {
   box-sizing: border-box;
   width: 100%;
   height: 90/75rem;
-  &.low {
+  &.sm {
     height: 70/75rem;
     label .iconfont {
       font-size: 32/75rem;
