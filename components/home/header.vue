@@ -9,7 +9,7 @@
       <div class="_content_rg flex-btw-ctr cl-yellow-d">
         <span v-if="false" class="fz-14">登录/注册</span>
 
-        <i class="fz-29 iconfont icon-brush"></i>
+        <i class="fz-29 fw-lgt iconfont icon-brush"></i>
         <img class="avator" src="https://ha-kafer.oss-cn-beijing.aliyuncs.com/img/default-avatar.png" alt="avator"/>
       </div>
     </div>
@@ -28,8 +28,13 @@ export default {
 @import '~assets/style/variable/color.less';
 
 .home-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 112/75rem;
   background: @white;
+  z-index: 10;
   .home-header_content {
     box-sizing: border-box;
     height: 110/75rem;
@@ -46,6 +51,7 @@ export default {
         box-sizing: border-box;
         width: 70/75rem;
         height: 70/75rem;
+        border-radius: 6/75rem;
       }
     }
   }
