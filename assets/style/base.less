@@ -1,7 +1,7 @@
 @import './normalize.less';
 @import './variable/color.less';
 
-// 所有颜色样式
+// 颜色
 .cl-white {
   color: @white;
 }
@@ -29,8 +29,7 @@
 .cl-yellow-d {
   color: @yellow-d;
 }
-
-// 所有字体样式
+// 字体
 .fz-12 {
   font-size: 24/75rem;
 }
@@ -48,4 +47,23 @@
 }
 .fz-29 {
   font-size: 58/75rem;
+}
+
+.fw-lgt {
+  font-weight: 400;  
+}
+.fw-nrm {
+  font-weight: 500;
+}
+.fw-bold {
+  font-weight: 600;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+}
+// 浏览器样式重置
+input, textarea {
+  -webkit-appearance: none;
 }

@@ -88,7 +88,7 @@ export default {
     &.has_icon {
       padding-left: 1rem;
     }
-    border: 1/75rem solid @gray;
+    border: 2/75rem solid @gray;
     border-radius: 8/75rem;
     font-size: 32/75rem;
     color: @gray-d-e;
