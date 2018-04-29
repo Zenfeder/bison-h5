@@ -9,13 +9,14 @@
       <slot name="content"/>
     </section>
     <!-- 加载中 -->
-    <section v-show="loading" class="loading-wrap flex-ctr">
+    <section v-show="loading && !nodata" class="loading-wrap flex-ctr">
       <ha-loading/>
     </section>
     <!-- 底线 -->
-    <section v-show="nomore" class="nomore fz-14 cl-gray">
+    <section v-show="nomore && !nodata" class="nomore fz-14 cl-gray">
       ～ 我是有底线的 ～
     </section>
+
     <!-- 无数据 -->
     <section v-if="nodata" class="no-data">
       <div style="text-align:center;width:100%;">
@@ -88,7 +89,7 @@ export default {
     listenSrcoll(document, () => {
       getScrollTop() + getClientHeight()
       if (getScrollTop() + getClientHeight() === getScrollHeight()) {
-        if (!this.loading && !this.nomore) {
+        if (!this.loading && !this.nomore && !this.nodata) {
           this.$emit('loadmore')
         }
       }
