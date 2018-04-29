@@ -5,6 +5,6 @@ export default function ({ isServer, store, req }) {
   if (isServer) return
 
   if (storage.get('token') !== null) {
-    store.commit('SET_TOKEN', storage.get('token'))
+    store.commit('user/SET_TOKEN', storage.get('token'))
   }
 }

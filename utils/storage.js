@@ -1,7 +1,7 @@
 const storage = {
 	set (key, value, ms) {
-    // 默认缓存30天
-    const _ms = ms ? ms : 30*24*60*60*1000
+    // 默认缓存7天
+    const _ms = ms ? ms : 7*24*60*60*1000
 
     const data = {
       value: value, 

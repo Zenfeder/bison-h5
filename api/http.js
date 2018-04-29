@@ -1,5 +1,5 @@
 import axios from 'axios'
-import apiMap from './api.map.js'
+import apiMap from '~api/api.map'
 
 export default function ({ api, url, method, headers, body, params, query }) {
   let _method = method ? method :'get'

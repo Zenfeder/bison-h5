@@ -12,8 +12,9 @@
           <img class="avator" src="~static/default-avator.png" alt="avator"/>
         </div>
 
-        <div v-else class="flex-alg-ctr flex-jus-rg">
-          <span class="fz-14" @click="sign">登录/注册</span>
+        <div v-else class="flex-alg-ctr flex-jus-rg fz-14">
+          <span @click="$nuxt.$router.push({ name: 'login' })">登录</span>/
+          <span @click="$nuxt.$router.push({ name: 'register' })">注册</span>
         </div>
       </div>
     </div>
@@ -36,8 +37,8 @@ export default {
     })
   },
   methods: {
-    sign () {
-      this.$nuxt.$router.push({ name: 'login' })
+    sign (name) {
+      this.$nuxt.$router.push({ name })
     }
   }
 }
