@@ -7,13 +7,13 @@
       </div>
 
       <div class="_content_rg cl-yellow-d">
-        <div v-if="false" class="flex-alg-ctr flex-jus-rg">
-          <span class="fz-14">登录/注册</span>
-        </div>
-
-        <div v-if="true" class="flex-btw-ctr">
+        <div v-if="isLogin" class="flex-btw-ctr">
           <i class="fz-29 fw-lgt iconfont icon-brush"></i>
           <img class="avator" src="~static/default-avator.png" alt="avator"/>
+        </div>
+
+        <div v-else class="flex-alg-ctr flex-jus-rg">
+          <span class="fz-14" @click="sign">登录/注册</span>
         </div>
       </div>
     </div>
@@ -23,8 +23,23 @@
 </template>
 
 <script>
+import { mapState, mapGetters } from 'vuex'
+
 export default {
-  name: 'homeHeader'
+  name: 'homeHeader',
+  computed: {
+    ...mapState({
+      userInfo: (state) => state.user.userInfo
+    }),
+    ...mapGetters({
+      isLogin: 'user/isLogin'
+    })
+  },
+  methods: {
+    sign () {
+      this.$nuxt.$router.push({ name: 'login' })
+    }
+  }
 }
 </script>
 

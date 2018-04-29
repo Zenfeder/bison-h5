@@ -1,7 +1,7 @@
 <template>
   <div class="ha-input_box" :class="size">
     <label v-if="validateIcon">
-      <i class="iconfont" :class="'icon-' + icon"></i>
+      <i class="iconfont cl-gray-d" :class="'icon-' + icon"></i>
     </label>
     <input :type="type" :class="{ 'has_icon': validateIcon }" :placeholder="placeholder"/>
   </div>
@@ -72,7 +72,6 @@ export default {
     text-align: center;
     .iconfont {
       font-size: 40/75rem;
-      color: @gray-d-e;
     }
   }
   input {
@@ -94,6 +93,7 @@ export default {
     color: @gray-d-e;
     &::placeholder {
       color: @gray-l;
+      font-weight: 400;
     }
   }
 }
