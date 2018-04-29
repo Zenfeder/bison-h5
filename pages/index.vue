@@ -1,18 +1,23 @@
 <template>
   <section class="container">
     <home-header/>
-    
-    <joke-item
-      v-for="(item, index) in jokes" 
-      :item="item" 
-      :key="index"/>
-
-    <ha-loading/>
+    <ha-scroll 
+      :nodata="jokes.length === 0"
+      btn-linkname="joke-write"
+      btn-text="写段子去"
+      :padding-top="110/75"
+      background-color="#fff"
+      :nomore="nomore"
+      :loading="loading"
+      @loadmore="loadmore">
+      <template slot="content">
+        <joke-item v-for="(item, index) in jokes" :item="item" :key="index"/>
+      </template>
+    </ha-scroll>
   </section>
 </template>
 
 <script>
-import { mapState, mapMutations } from 'vuex'
 import http from '~api/http.js'
 import homeHeader from '~components/home/header'
 import jokeItem from '~components/joke/jokeItem.vue'
@@ -23,34 +28,26 @@ export default {
     jokeItem,
   },
   async asyncData (context) {
-    let jokes = await http({ api: 'joke' })
+    let jokes = await http({ api: 'joke', query: { size: 10 } })
     return { jokes }
   },
-  computed: {
-    ...mapState({
-      counter: (state) => state.counter,
-      username: (state) => state.user.username,
-    })
-  },
-  mounted () {
-    this.$toasted.show('敬请期待')
+  data () {
+    return {
+      loading: false,
+      nomore: false
+    }
   },
   methods: {
-    ...mapMutations([
-      'increment'
-    ]),
-    async fetchData () {
-      let jokes = await http({ api: 'joke' })
+    async loadmore () {
+      let jokes = []
+      this.loading = true
+      jokes = await http({ api: 'joke', query: { offset: this.jokes.length, size: 10 }})
+      this.loading = false
       if (jokes.length === 0) {
-        this.$toasted.show('没有更多数据了')
+        this.nomore = true
         return
       }
       this.jokes = this.jokes.concat(jokes)
-    },
-    btnClick () {
-      this.increment()
-      // this.$nuxt.$router.push({ name: 'login' })
-      // this.fetchData()
     }
   }
 }
@@ -58,6 +55,6 @@ export default {
 
 <style lang="less">
 .container {
-  padding-top: 134/75rem;
+  box-sizing: border-box;
 }
 </style>

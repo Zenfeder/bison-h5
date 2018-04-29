@@ -6,11 +6,15 @@
         <ha-input class="custom-input" size="sm" icon="search" placeholder="搜点好玩的..."/>
       </div>
 
-      <div class="_content_rg flex-btw-ctr cl-yellow-d">
-        <span v-if="false" class="fz-14">登录/注册</span>
+      <div class="_content_rg cl-yellow-d">
+        <div v-if="false" class="flex-alg-ctr flex-jus-rg">
+          <span class="fz-14">登录/注册</span>
+        </div>
 
-        <i class="fz-29 fw-lgt iconfont icon-brush"></i>
-        <img class="avator" src="https://ha-kafer.oss-cn-beijing.aliyuncs.com/img/default-avatar.png" alt="avator"/>
+        <div v-if="true" class="flex-btw-ctr">
+          <i class="fz-29 fw-lgt iconfont icon-brush"></i>
+          <img class="avator" src="~static/default-avator.png" alt="avator"/>
+        </div>
       </div>
     </div>
 

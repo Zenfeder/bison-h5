@@ -2,7 +2,9 @@
   <div class="joke-item_box">
     <div class="_box_header flex-btw-ctr">
       <div class="joke-user flex-btw-ctr">
-        <img :src="item.user_avator"/>&nbsp;
+        <img v-if="item.avator" :src="item.avator"/>
+        <img v-else src="~static/default-avator.png"/>
+        &nbsp;
         <p class="fz-16 cl-gray-d-e fw-bold">{{ item.user_name }}</p>
       </div>
       <div class="joke-date fz-12 cl-gray-l">{{ getTime }}</div>
