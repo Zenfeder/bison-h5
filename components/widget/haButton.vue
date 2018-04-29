@@ -1,5 +1,5 @@
 <template>
-  <button class="ha-btn" :class="classObj" @click="handleClick">
+  <button class="ha-btn" :class="classObj" :disabled="disabled" @click="handleClick">
     <slot/>
   </button>
 </template>
@@ -12,16 +12,25 @@ export default {
       type: Boolean,
       default: true
     },
+    plain: {
+      type: Boolean,
+      default: false
+    },
     full: {
       type: Boolean,
       default: true
+    },
+    disabled: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
     classObj () {
       return {
         'btn_radius': this.radius,
-        'btn_full': this.full
+        'btn_plain': this.plain,
+        'btn_full': this.full,
       }
     }
   },
@@ -50,6 +59,14 @@ export default {
   }
   &.btn_radius {
     border-radius: 8/75rem;
+  }
+  &.btn_plain {
+    background: @white;
+    color: @yellow-d;
+    &[disabled='disabled'] {
+      border: 1/75rem solid @gray-l;
+      color: @gray-l-e;
+    }
   }
   &.btn_full {
     width: 100%;

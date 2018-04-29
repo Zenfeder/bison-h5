@@ -18,7 +18,7 @@ function validatePassword (password) {
   return reg.test(password)
 }
 
-export default  {
+export {
   validateEmail,
   validateUsername,
   validatePassword

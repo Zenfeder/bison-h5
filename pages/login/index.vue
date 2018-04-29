@@ -13,7 +13,7 @@
     </div>
 
     <div class="flex-jus-btw fz-12 cl-gray">
-      <span>忘记密码？</span>
+      <span @click="$nuxt.$router.push({ name: 'findpwd' })">忘记密码？</span>
       <span @click="$nuxt.$router.push({ name: 'register' })">新用户？立即注册</span>
     </div>
   </section>
