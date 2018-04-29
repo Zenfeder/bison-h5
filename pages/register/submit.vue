@@ -22,7 +22,7 @@
 <script>
 import { mapMutations } from 'vuex'
 import session from '~utils/session'
-import http from '~api/http'
+import storage from '~utils/storage'
 import { validateUsername, validatePassword } from '~utils/validate'
 
 export default {
@@ -44,11 +44,11 @@ export default {
     },
     submit () {
       if (!validateUsername(this.form.name)) {
-        this.$toasted.show('用户名格式错误', { type: 'error' })
+        this.$toasted.show('用户名格式智障', { type: 'error' })
         return
       }
       if (!validatePassword(this.form.password)) {
-        this.$toasted.show('密码格式错误', { type: 'error' })
+        this.$toasted.show('密码格式智障', { type: 'error' })
         return
       }
       if (this.form.password !== this.form.pwdConfirm) {
@@ -56,7 +56,7 @@ export default {
         return
       }
 
-      http({
+      this.$http({
         api: 'userRegister',
         method: 'post',
         body: {
@@ -66,10 +66,9 @@ export default {
         }
       }).then(data => {
         session.remove('email')
+        storage.set('token', data)
         this.SET_TOKEN(data)
         this.$nuxt.$router.push({ name: 'index' })
-      }).catch(err => {
-        this.$toasted.show(err.message, { type: 'error' })
       })
     }
   }

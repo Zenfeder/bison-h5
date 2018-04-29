@@ -21,7 +21,7 @@
 
 <script>
 import { mapMutations } from 'vuex'
-import http from '~api/http'
+import storage from '~utils/storage'
 
 export default {
   data () {
@@ -40,15 +40,14 @@ export default {
       this.$nuxt.$router.push({ name: 'index' })
     },
     login () {
-      http({
+      this.$http({
         api: 'userlogin',
         method: 'post',
         body: this.form
       }).then(data => {
+        storage.set('token', data)
         this.SET_TOKEN(data)
         this.$nuxt.$router.push({ name: 'index' })
-      }).catch(err => {
-        this.$toasted.show(err.message, { type: 'error' })
       })
     }
   }

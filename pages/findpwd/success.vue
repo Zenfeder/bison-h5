@@ -1,3 +1,3 @@
 <template>
-  <div>找回密码-邮件发送成功</div>
+  <div>待开发...</div>
 </template>

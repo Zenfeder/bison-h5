@@ -30,7 +30,6 @@
 </template>
 
 <script>
-import http from '~api/http'
 import session from '~utils/session'
 import { validateEmail } from '~utils/validate'
 
@@ -72,28 +71,23 @@ export default {
         this.$toasted.show('邮箱格式不正确', { type: 'error' })
         return
       }
-      http({
+      this.$http({
         api: 'userRegisterVcode',
         query: { email: this.form.email }
       }).then(data => {
         timer.call(this)
-      }).catch(err => {
-        this.$toasted.show(err.message, { type: 'error' })
       })
     },
     validateVcode () {
-      http({
+      this.$http({
         api: 'userRegisterVcode',
         method: 'post',
         body: this.form
       }).then(data => {
         session.set('email', this.form.email)
         this.$nuxt.$router.push({ name: 'register-submit' })
-      }).catch(err => {
-        this.$toasted.show(err.message, { type: 'error' })
       })
     }
   }
 }
 </script>
-

@@ -18,7 +18,6 @@
 </template>
 
 <script>
-import http from '~api/http.js'
 import homeHeader from '~components/home/header'
 import jokeItem from '~components/joke/jokeItem.vue'
 
@@ -27,8 +26,8 @@ export default {
     homeHeader,
     jokeItem,
   },
-  async asyncData (context) {
-    let jokes = await http({ api: 'joke', query: { size: 10 } })
+  async asyncData ({ app }) {
+    let jokes = await app.$http({ api: 'joke', query: { size: 10 } })
     return { jokes }
   },
   data () {
@@ -41,7 +40,7 @@ export default {
     async loadmore () {
       let jokes = []
       this.loading = true
-      jokes = await http({ api: 'joke', query: { offset: this.jokes.length, size: 10 }})
+      jokes = await this.$http({ api: 'joke', query: { offset: this.jokes.length, size: 10 }})
       this.loading = false
       if (jokes.length === 0) {
         this.nomore = true

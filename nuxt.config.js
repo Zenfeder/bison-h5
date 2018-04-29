@@ -33,7 +33,7 @@ module.exports = {
         loader: "less-loader"
       }]
     }],
-    extend (config, { isDev, isClient }) {
+    extend (config, { isDev, isClient, isServer }) {
       config.resolve.alias['~api'] = path.join(__dirname, 'api')
       config.resolve.alias['~utils'] = path.join(__dirname, 'utils')
       config.resolve.alias['~components'] = path.join(__dirname, 'components')
@@ -62,7 +62,8 @@ module.exports = {
   },
   vendor: ['axios', 'vue-toasted'],
   plugins: [
-    { src: '~plugins/vue-toast.js', ssr: false },
+    { src: '~plugins/vueToast.js', ssr: false },
+    '~plugins/http.js',
     { src: '~plugins/components.js', ssr: true },
   ]
 }
