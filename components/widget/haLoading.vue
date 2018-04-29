@@ -1,5 +1,6 @@
 <template>
-  <div class="loading">
+  <div class="ha-loading">
+    <!-- <img src="~static/loading.gif"> -->
     <i class="iconfont icon-loading"></i>
   </div>
 </template>
@@ -13,10 +14,13 @@ export default {
 <style lang="less">
 @import '~assets/style/variable/color.less';
 
-.loading {
+.ha-loading {
   display: inline-block;
   width: 30/37.5rem;
   height: 30/37.5rem;
+  img {
+    width: 100%;
+  }
   -webkit-animation: circle 1.8s infinite linear;
   .icon-loading{
     font-size: .8rem;
