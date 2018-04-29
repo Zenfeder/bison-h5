@@ -3,7 +3,12 @@
     <label v-if="validateIcon">
       <i class="iconfont cl-gray-d" :class="'icon-' + icon"></i>
     </label>
-    <input :type="type" :class="{ 'has_icon': validateIcon }" :placeholder="placeholder"/>
+    <input 
+      :type="type" 
+      :class="{ 'has_icon': validateIcon }" 
+      :placeholder="placeholder"
+      :value="value"
+      @input="$emit('input', $event.target.value)"/>
   </div>
 </template>
 
@@ -26,6 +31,9 @@ export default {
     icon: {
       type: String,
       default: ''
+    },
+    value: {
+      type: String | Number
     }
   },
   computed: {

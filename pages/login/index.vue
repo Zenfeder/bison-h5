@@ -24,7 +24,7 @@ export default {
   data () {
     return {
       form: {
-        nameOrEmail: '',
+        nameOrEmail: 'Adam',
 	      password: ''
       }
     }
