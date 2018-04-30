@@ -1,7 +1,8 @@
 <template>
   <section class="ha-textarea">
     <textarea
-      :value="value" 
+      :value="value"
+      :maxlength="maxLen"
       :placeholder="placeholder" 
       @input="$emit('input', $event.target.value)"></textarea>
     <p class="fz-12 char-limit flex-jus-btw">
@@ -42,6 +43,7 @@ export default {
   watch: {
     charLen (newVal, oldVal) {
       if (newVal > this.maxLen) {
+
         console.log(this.charLen)
       }
     }
