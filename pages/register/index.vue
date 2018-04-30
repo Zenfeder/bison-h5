@@ -64,7 +64,7 @@ export default {
   },
   methods: {    
     onclose () {
-      this.$nuxt.$router.push({ name: 'index' })
+      this.$nuxt.$router.back()
     },
     getVcode () {
       if (!validateEmail(this.form.email)) {

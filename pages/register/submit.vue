@@ -40,7 +40,7 @@ export default {
       SET_TOKEN: 'user/SET_TOKEN'
     }),
     onclose () {
-      this.$nuxt.$router.push({ name: 'index' })
+      this.$nuxt.$router.go(-2)
     },
     submit () {
       if (!validateUsername(this.form.name)) {

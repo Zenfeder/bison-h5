@@ -37,7 +37,7 @@ export default {
       SET_TOKEN: 'user/SET_TOKEN'
     }),
     onclose () {
-      this.$nuxt.$router.push({ name: 'index' })
+      this.$nuxt.$router.back()
     },
     login () {
       this.$http({

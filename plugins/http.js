@@ -3,7 +3,7 @@ import axios from 'axios'
 import apiMap from '~api/api.map'
 import storage from '~utils/storage'
 
-export default ({ app, isClient }, inject) => {
+export default ({ app, isClient, redirect }, inject) => {
   inject('http', ({ api, url, method, headers, body, params, query }) => {
     let _method = method ? method :'get'
     let _url = api ? apiMap[api](params||'') : url
@@ -35,6 +35,11 @@ export default ({ app, isClient }, inject) => {
           Vue.toasted.show(err.response.data.message, { type: 'error' })
         }
         reject(err.response.data)
+
+        // 401错误码跳转到登录页
+        if (err.response.status === 401) {
+          redirect('/login')
+        }
       })
     })
   })
