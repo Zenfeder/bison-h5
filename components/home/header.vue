@@ -8,7 +8,7 @@
 
       <div class="_content_rg cl-yellow-d">
         <div v-if="isLogin" class="flex-btw-ctr">
-          <i class="fz-29 fw-lgt iconfont icon-brush"></i>
+          <i class="fz-29 fw-lgt iconfont icon-brush" @click="$nuxt.$router.push({ name: 'joke-write' })"></i>
           <img class="avator" src="~static/default-avator.png" alt="avator"/>
         </div>
 

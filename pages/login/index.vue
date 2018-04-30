@@ -9,7 +9,7 @@
     <div class="form-wrap">
       <ha-input v-model="form.nameOrEmail" class="form_input" icon="people_fill" placeholder="请输入昵称或邮箱"/>
       <ha-input v-model="form.password" class="form_input" type="password" icon="lock" placeholder="请输入密码"/>
-      <ha-button @click="login">登录</ha-button>
+      <ha-button @click="login">登&nbsp;&nbsp;&nbsp;&nbsp;录</ha-button>
     </div>
 
     <div class="flex-jus-btw fz-12 cl-gray">

@@ -10,7 +10,7 @@
       <ha-input v-model="form.name" class="form_input" icon="people_fill" placeholder="请输入昵称"/>
       <ha-input v-model="form.password" class="form_input" type="password" icon="lock" placeholder="请输入密码"/>
       <ha-input v-model="form.pwdConfirm" class="form_input" type="password" icon="lock" placeholder="请再次输入密码"/>
-      <ha-button @click="submit">注册</ha-button>
+      <ha-button @click="submit">注&nbsp;&nbsp;&nbsp;&nbsp;册</ha-button>
     </div>
 
     <div class="flex-jus-btw fz-12 cl-gray">
