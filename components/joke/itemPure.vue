@@ -51,7 +51,7 @@ export default {
 
 .joke-item_box {
   box-sizing: border-box;
-  width: 702/75rem;
+  width: 100%;
   padding: 24/75rem;
   margin-top: 24/75rem;
   background: @white;
