@@ -64,6 +64,7 @@ module.exports = {
   plugins: [
     { src: '~plugins/vueToast.js', ssr: false },
     '~plugins/http.js',
-    { src: '~plugins/components.js', ssr: true },
+    '~plugins/components.js',
+    '~plugins/filters.js',
   ]
 }

@@ -19,7 +19,7 @@
 
 <script>
 import homeHeader from '~components/home/header'
-import jokeItem from '~components/joke/jokeItem.vue'
+import jokeItem from '~components/joke/item.vue'
 
 export default {
   components: {

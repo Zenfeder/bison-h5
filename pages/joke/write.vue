@@ -39,6 +39,6 @@ export default {
 <style lang="less" scoped>
 .page-joke_write {
   box-sizing: border-box;
-  padding: 100/75rem 24/75rem;
+  padding: 80/75rem 24/75rem;
 }
 </style>
