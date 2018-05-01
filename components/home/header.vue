@@ -3,7 +3,12 @@
     <div class="home-header_content flex-btw-ctr">
       <div class="_content_lf flex-btw-ctr">
         <logo size="sm"/>
-        <ha-input class="custom-input" size="sm" icon="search" placeholder="搜点好玩的..."/>
+        <ha-input 
+          class="custom-input" 
+          size="sm" 
+          icon="search" 
+          placeholder="搜点好玩的..."
+          @focus="$nuxt.$router.push({ name: 'search' })"/>
       </div>
 
       <div class="_content_rg cl-yellow-d">

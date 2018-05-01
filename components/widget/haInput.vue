@@ -8,7 +8,10 @@
       :class="{ 'has_icon': validateIcon }" 
       :placeholder="placeholder"
       :value="value"
-      @input="$emit('input', $event.target.value)"/>
+      :autofocus="autofocus"
+      @focus="$emit('focus')"
+      @input="$emit('input', $event.target.value)"
+      @keyup.enter="$emit('submit')"/>
   </div>
 </template>
 
@@ -27,6 +30,10 @@ export default {
     placeholder: {
       type: String,
       default: ''
+    },
+    autofocus: {
+      type: Boolean,
+      default: false
     },
     icon: {
       type: String,

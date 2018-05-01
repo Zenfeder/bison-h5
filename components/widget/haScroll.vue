@@ -9,13 +9,14 @@
       <slot name="content"/>
     </section>
     <!-- 加载中 -->
-    <section v-show="loading && !nodata" class="loading-wrap flex-ctr">
+    <section v-if="loading && !nodata" class="loading-wrap flex-ctr">
       <ha-loading/>
     </section>
     <!-- 底线 -->
-    <section v-show="nomore && !nodata" class="nomore fz-14 cl-gray">
-      ～ 我是有底线的 ～
-    </section>
+    <div v-if="nomore && !nodata" class="nomore fz-14 cl-gray flex-ctr"
+      :style="{ backgroundColor }">
+      我也是有底线的
+    </div>
 
     <!-- 无数据 -->
     <section v-if="nodata" class="no-data">
@@ -87,8 +88,7 @@ export default {
     const scrollContainer = document.querySelector('.ha-scroll')
 
     listenSrcoll(document, () => {
-      getScrollTop() + getClientHeight()
-      if (getScrollTop() + getClientHeight() === getScrollHeight()) {
+      if (getScrollHeight()-(getScrollTop() + getClientHeight()) < getScrollHeight()/5) {
         if (!this.loading && !this.nomore && !this.nodata) {
           this.$emit('loadmore')
         }
@@ -108,15 +108,18 @@ export default {
 
 .ha-scroll {
   box-sizing: border-box;
-  height: 100vh;
+  min-height: 100vh;
 }
-.loading-wrap, .nomore {
+.loading-wrap{
   text-align: center;
   margin: 24/75rem auto;
 }
+.nomore {
+  height: 84/75rem;
+}
 .no-data {
   box-sizing: border-box;
-  height: 100%;
+  min-height: 100vh;
   padding: 0 24/75rem;
   display: flex;
   justify-content: center;
