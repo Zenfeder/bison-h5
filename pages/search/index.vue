@@ -88,14 +88,11 @@ export default {
       if (session.get('searchKeyword') !== keyword) {
         session.set('searchKeyword', keyword)
       }
-
-      setHistoryKeywords(keyword)
-
       if (keyword.trim() === '') {
         this.$toasted.show('请输入关键字', { type: 'error', duration: 1000 })
         return
       }
-
+      setHistoryKeywords(keyword)
       this.$nuxt.$router.push({
         name: 'search-keyword',
         params: {
