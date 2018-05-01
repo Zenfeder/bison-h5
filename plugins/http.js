@@ -3,7 +3,7 @@ import axios from 'axios'
 import apiMap from '~api/api.map'
 import storage from '~utils/storage'
 
-export default ({ app, isClient, redirect }, inject) => {
+export default ({ app, redirect }, inject) => {
   inject('http', ({ api, url, method, headers, body, params, query }) => {
     let _method = method ? method :'get'
     let _url = api ? apiMap[api](params||'') : url
@@ -12,7 +12,7 @@ export default ({ app, isClient, redirect }, inject) => {
     let _body = body ? body : {}
     
     // 服务端跳过
-    if (isClient) {
+    if (process.client) {
       if (storage.get('token') !== null) {
         _headers['Authorization'] = storage.get('token')
       }
@@ -31,7 +31,7 @@ export default ({ app, isClient, redirect }, inject) => {
       }).catch(err => {
         // statusCode: err.response.status
         // 服务端跳过
-        if (isClient) {
+        if (process.client) {
           Vue.toasted.show(err.response.data.message, { type: 'error' })
         }
         reject(err.response.data)

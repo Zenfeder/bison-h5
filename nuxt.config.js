@@ -33,7 +33,7 @@ module.exports = {
         loader: "less-loader"
       }]
     }],
-    extend (config, { isDev, isClient, isServer }) {
+    extend (config, { isDev }) {
       config.resolve.alias['~api'] = path.join(__dirname, 'api')
       config.resolve.alias['~utils'] = path.join(__dirname, 'utils')
       config.resolve.alias['~components'] = path.join(__dirname, 'components')
@@ -44,7 +44,7 @@ module.exports = {
         }
       }
 
-      if (isDev && isClient) {
+      if (isDev && process.client) {
         config.module.rules.push({
           enforce: 'pre',
           test: /\.(js|vue)$/,
