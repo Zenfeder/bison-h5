@@ -7,7 +7,6 @@
           v-model="keyword" 
           icon="search" 
           size="sm" 
-          type="search"
           placeholder="搜点好玩的..."
           @focus="$nuxt.$router.back()"/>
       </div>
