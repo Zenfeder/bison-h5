@@ -1,21 +1,18 @@
 <template>
   <section class="page-search_entry">
     <!-- 顶部搜索栏 -->
-    <no-ssr>
-      <section class="search-header flex-btw-ctr">
-        <div class="searchbar">
-          <ha-input 
-            v-model="keyword" 
-            type="search"
-            icon="search" 
-            size="sm" 
-            :autofocus="true" 
-            placeholder="搜点好玩的..."
-            @submit="search(keyword)"/>
-        </div>
-        <span class="cl-yellow-d fz-14" @click="cancel">取消</span>
-      </section>
-    </no-ssr>
+    <section class="search-header flex-btw-ctr">
+      <div class="searchbar">
+        <ha-input 
+          v-model="keyword"
+          icon="search" 
+          size="sm" 
+          :autofocus="true" 
+          placeholder="搜点好玩的..."
+          @submit="search(keyword)"/>
+      </div>
+      <span class="cl-yellow-d fz-14" @click="cancel">取消</span>
+    </section>
 
     <!-- 热搜关键字 -->
     <section>

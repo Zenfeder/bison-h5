@@ -9,7 +9,8 @@
       </div>
       <div class="joke-date fz-12 cl-gray-l">{{ item.created_at | formatDate }}</div>
     </div>
-    <div class="_box_body fw-lgt cl-black fz-16">
+    <div class="_box_body fw-lgt cl-black fz-16"
+      @click="$nuxt.$router.push({ name: 'joke-id', params: { id: item.id }})">
       {{ item.content }}
     </div>
     <div class="_box_footer flex-jus-rg flex-alg-ctr fz-14">

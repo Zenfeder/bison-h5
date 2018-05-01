@@ -1,6 +1,7 @@
 <template>
   <div class="joke-item_box">
-    <div class="_box_body fw-lgt cl-gray-d-e fz-14">
+    <div class="_box_body fw-lgt cl-gray-d-e fz-14" 
+      @click="$nuxt.$router.push({ name: 'joke-id', params: { id: item.id }})">
       <template v-if="highlightKeys.length === 0">{{ item.content }}</template>
       <template v-else>
         <div v-html="formatedContent"></div>
