@@ -1,7 +1,10 @@
 <template>
   <div class="joke-item_box">
     <div class="_box_body fw-lgt cl-gray-d-e fz-14">
-      {{ item.content }}
+      <template v-if="highlightKeys.length === 0">{{ item.content }}</template>
+      <template v-else>
+        <div v-html="formatedContent"></div>
+      </template>
     </div>
     <div class="_box_footer flex-jus-rg flex-alg-ctr fz-12 cl-gray">
       <div class="joke-interaction">
@@ -21,7 +24,22 @@
 export default {
   name: 'jokeItemPure',
   props: {
-    item: Object
+    item: Object,
+    highlightKeys: {
+      type: Array,
+      default () {
+        return []
+      }
+    }
+  },
+  data () {
+    return {
+      formatedContent: ''
+    }
+  },
+  mounted () {
+    let reg = new RegExp(this.highlightKeys.join('|') + '+', 'g')
+    this.formatedContent = this.item.content.replace(reg, (match) => '<span class="cl-yellow-d">' + match + '</span>')
   }
 }
 </script>

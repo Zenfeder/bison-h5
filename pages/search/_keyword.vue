@@ -24,7 +24,12 @@
       :loading="loading"
       @loadmore="loadmore">
       <template slot="content">
-        <joke-item-pure v-for="(item, index) in results" :item="item" :key="index"/>
+        <joke-item-pure 
+          v-for="(item, index) in results" 
+          :item="item" 
+          :key="index"
+          :highlight="true"
+          :highlightKeys="highlightKeys"/>
       </template>
     </ha-scroll>
   </section>
@@ -39,15 +44,15 @@ export default {
   },
   async asyncData ({ app, params }) {
     let keyword = params.keyword
-    let results = (await app.$http({
+    let { list, keywords } = await app.$http({
       api: 'search',
       query: {
         keyword,
         offset: 0, 
         size: 10 
       }
-    })).list
-    return { keyword, results }
+    })
+    return { keyword, results: list, highlightKeys: keywords }
   },
   data () {
     return {
