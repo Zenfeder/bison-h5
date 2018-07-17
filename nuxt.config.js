@@ -34,6 +34,7 @@ module.exports = {
       }]
     }],
     extend (config, { isDev }) {
+      config.resolve.alias['vue'] = 'vue/dist/vue.common'
       config.resolve.alias['~api'] = path.join(__dirname, 'api')
       config.resolve.alias['~utils'] = path.join(__dirname, 'utils')
       config.resolve.alias['~components'] = path.join(__dirname, 'components')
@@ -63,6 +64,7 @@ module.exports = {
   vendor: ['axios', 'vue-toasted'],
   plugins: [
     { src: '~plugins/vueToast.js', ssr: false },
+    { src: '~plugins/tantan.js', ssr: false },
     '~plugins/http.js',
     '~plugins/components.js',
     '~plugins/filters.js',

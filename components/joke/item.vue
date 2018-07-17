@@ -14,15 +14,15 @@
       {{ item.content }}
     </div>
     <div class="_box_footer flex-jus-rg flex-alg-ctr fz-14">
-      <div class="joke-interaction">
+      <div class="joke-interaction" @click="vote(item.id, 'like')">
         <i class="iconfont icon-praise"></i>&nbsp;
         <span class="number">{{ item.like_num }}</span>
       </div>
-      <div class="joke-interaction">
+      <div class="joke-interaction" @click="vote(item.id, 'dislike')">
         <i class="iconfont icon-thumb-down"></i>&nbsp;
         <span class="number">{{ item.dislike_num }}</span>
       </div>
-      <div class="joke-interaction">
+      <div class="joke-interaction" @click="comment(item.id)">
         <i class="iconfont icon-interactive"></i>&nbsp;
         <span class="number">{{ item.comment_num }}</span>
       </div>
@@ -35,6 +35,14 @@ export default {
   name: 'jokeItem',
   props: {
     item: Object
+  },
+  methods: {
+    vote (jokeId, type) {
+
+    },
+    comment (jokeId) {
+
+    }
   }
 }
 </script>
